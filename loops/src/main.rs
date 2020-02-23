@@ -1,3 +1,6 @@
 fn main() {
-    println!("Hello, world!");
+    // infinite loop
+    loop {
+        println!("again!", )
+    }
 }
