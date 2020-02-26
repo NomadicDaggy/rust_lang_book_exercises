@@ -62,3 +62,11 @@ pub fn eat_at_restaurant() {
     // to see or modify the seasonal fruit that comes with the meal
     // meal.seasonal_fruit = String::from("blueberries");
 }
+
+// Nested paths
+// brings in std::io and std::io::Write
+use std::io::{self, Write};
+
+// "*" is the glob operator
+// you can use it to bring all the public items in its scope
+use std::collections::*;
