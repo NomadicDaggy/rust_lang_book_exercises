@@ -17,6 +17,17 @@ mod front_of_house {  // This is a module
     }
 }
 
+fn serve_order() {}
+
+mod back_of_house {
+    fn fix_incorrect_order() {
+        cook_order();
+        super::serve_order(); // super is like ".."- you climb a level up
+    }
+
+    fn cook_order() {}
+}
+
 pub fn eat_at_restaurant() {
     // Absolute Path
     crate::front_of_house::hosting::add_to_waitlist();
