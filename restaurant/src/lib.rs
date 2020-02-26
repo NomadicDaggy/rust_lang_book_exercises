@@ -1,21 +1,5 @@
-mod front_of_house {  // This is a module
-    // Making the module public, does not make its contents public
-    pub mod hosting {  // Modules can be nested
-        // And modules can have definitions of a bunch of things
-        // like functions
-        pub fn add_to_waitlist() {}
-
-        fn seat_at_table() {}
-    }
-
-    mod serving {
-        fn take_order() {}
-
-        fn serve_order() {}
-
-        fn take_payment() {}
-    }
-}
+// We can define this in another file with the same name
+mod front_of_house;
 
 mod back_of_house {
     // Making a struct public, doesn't make its fields public
