@@ -13,7 +13,12 @@ struct IntegerList {
 
 impl IntegerList {
     fn default() -> IntegerList {
-        IntegerList { vec: vec![123,4123,5,65,1,12,41,2,6,67,2,3,23,3,4,532,21,12,235,235,26,2634,6234,62] }
+        IntegerList {
+            vec: vec![
+                123, 4123, 5, 65, 1, 12, 41, 2, 6, 67, 2, 3, 23, 3, 4, 532, 21, 12, 235, 235, 26,
+                2634, 6234, 62,
+            ],
+        }
     }
 
     fn from_vec(vec: Vec<u32>) -> IntegerList {
@@ -40,9 +45,11 @@ impl IntegerList {
     fn median(&mut self) -> f32 {
         self.sort();
         let vec_length = self.length();
-        if vec_length % 2 == 0 {  // average 2 middle values
+        if vec_length % 2 == 0 {
+            // average 2 middle values
             (self.vec[vec_length / 2] + self.vec[vec_length / 2 + 1]) as f32 / 2.0
-        } else {  // return middle value
+        } else {
+            // return middle value
             self.vec[vec_length / 2] as f32
         }
     }
@@ -82,7 +89,7 @@ impl IntegerList {
 fn main() {
     //let mut integer_list: Vec<u8> = Vec::new();
     //let mut integer_list = vec![123,4123,5,65,1,12,41,2,6,67,2,3,23,3,4,532,21,12,235,235,26,2634,6234,62];
-    let mut data = IntegerList::from_vec(vec![1,2,23,4,541,6,5,12,3, 1, 23, 23]);
+    let mut data = IntegerList::from_vec(vec![1, 2, 23, 4, 541, 6, 5, 12, 3, 1, 23, 23]);
     println!("data({}): {:?}", data.length(), data.vec);
 
     data.sort();

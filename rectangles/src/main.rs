@@ -1,4 +1,4 @@
-#[derive(Debug)]  // This is called an annotation
+#[derive(Debug)] // This is called an annotation
 struct Rectangle {
     width: u32,
     height: u32,
@@ -10,10 +10,14 @@ struct Rectangle {
 impl Rectangle {
     // If you omit self in method definition, it becomes an associated function
     fn square(size: u32) -> Rectangle {
-        Rectangle { width: size, height: size }
+        Rectangle {
+            width: size,
+            height: size,
+        }
     }
 
-    fn area(&self) -> u32 {  // and functions have to have (&)(mut) self as 1st arg
+    fn area(&self) -> u32 {
+        // and functions have to have (&)(mut) self as 1st arg
         self.width * self.height
     }
 
@@ -23,9 +27,18 @@ impl Rectangle {
 }
 
 fn main() {
-    let rect1 = Rectangle { width: 30, height : 50 };
-    let rect2 = Rectangle { width: 10, height : 40 };
-    let rect3 = Rectangle { width: 60, height : 45 };
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
+    let rect2 = Rectangle {
+        width: 10,
+        height: 40,
+    };
+    let rect3 = Rectangle {
+        width: 60,
+        height: 45,
+    };
     // Associated functions can be accessed by ::
     let square = Rectangle::square(20);
 
