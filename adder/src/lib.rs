@@ -16,9 +16,19 @@ pub fn greeting(name: &str) -> String {
 
 #[cfg(test)]
 mod tests {
+    /* Rather than calling assert_eq!, we can return Ok(()) if the
+     * test passes and an Err(with a string) if it fails.
+     * If we use this Result<T, E>, we can't use #[should_panic] though.
+     * Instead you should return an Err immediately if you want the
+     * test to fail in its middle.
+     */
     #[test]
-    fn example() {
-        assert_eq!(2 + 2, 4);
+    fn it_works() -> Result<(), String> {
+        if 2 + 2 == 4 {
+            Ok(())
+        } else {
+            Err(String::from("two plus two does not equal four"))
+        }
     }
 
     // Failing test
