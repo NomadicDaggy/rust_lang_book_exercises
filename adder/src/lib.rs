@@ -10,6 +10,10 @@ impl Rectangle {
     }
 }
 
+pub fn greeting(name: &str) -> String {
+    format!("Hello {}!", name)
+}
+
 #[cfg(test)]
 mod tests {
     #[test]
@@ -55,5 +59,15 @@ mod tests {
 
         //      v-----Usual negation works in Rust
         assert!(!smaller.can_hold(&larger));
+    }
+
+    #[test]
+    fn greeting_contains_name() {
+        let result = greeting("Carol");
+        assert!(
+            result.contains("Carol"),
+            "Greeting did not contain name, value was `{}`",
+            result
+        );
     }
 }
