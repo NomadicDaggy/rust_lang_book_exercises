@@ -1,3 +1,11 @@
+pub fn add_two(a: i32) -> i32 {
+    internal_adder(a, 2)
+}
+
+fn internal_adder(a: i32, b: i32) -> i32 {
+    a + b
+}
+
 #[derive(Debug)]
 struct Rectangle {
     width: u32,
@@ -29,13 +37,6 @@ mod tests {
         } else {
             Err(String::from("two plus two does not equal four"))
         }
-    }
-
-    // Failing test
-    // you have to make/let it panic if smth is wrong
-    #[test]
-    fn another() {
-        panic!("panicerino");
     }
 
     // Put this here to bring code 1 lvl up from this
